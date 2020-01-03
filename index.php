@@ -9,7 +9,7 @@ $app = new \Slim\Slim();
 $app->config('debug', true);
 
 $app->get('/', function () {
-    echo 'App inicioado com sucesso!';
+    echo 'App iniciado com sucesso!';
 });
 
 $app->run();
