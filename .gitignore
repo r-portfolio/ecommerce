@@ -3,3 +3,9 @@
 /hosts
 /httpd-vhosts.conf
 /favicon
+/composer.json
+/phpunit.xml
+test
+/vendor/odan  
+/vendor/bin/docblock-checker
+/.gitignore

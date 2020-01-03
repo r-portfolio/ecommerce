@@ -13,6 +13,11 @@ class Sql
 
     private $conn;
 
+    /**
+     * __construct.
+     *
+     * @return void
+     */
     public function __construct()
     {
         $this->conn = new \PDO(
@@ -22,6 +27,14 @@ class Sql
         );
     }
 
+    /**
+     * query.
+     *
+     * @param mixed $rawQuery
+     * @param mixed $params
+     *
+     * @return void
+     */
     public function query($rawQuery, $params = [])
     {
         $stmt = $this->conn->prepare($rawQuery);
@@ -31,6 +44,14 @@ class Sql
         $stmt->execute();
     }
 
+    /**
+     * select.
+     *
+     * @param mixed $rawQuery
+     * @param mixed $params
+     *
+     * @return array
+     */
     public function select($rawQuery, $params = []): array
     {
         $stmt = $this->conn->prepare($rawQuery);
@@ -42,6 +63,14 @@ class Sql
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    /**
+     * setParams.
+     *
+     * @param mixed $statement
+     * @param mixed $parameters
+     *
+     * @return void
+     */
     private function setParams($statement, $parameters = [])
     {
         foreach ($parameters as $key => $value) {
@@ -49,6 +78,15 @@ class Sql
         }
     }
 
+    /**
+     * bindParam.
+     *
+     * @param mixed $statement
+     * @param mixed $key
+     * @param mixed $value
+     *
+     * @return void
+     */
     private function bindParam($statement, $key, $value)
     {
         $statement->bindParam($key, $value);
