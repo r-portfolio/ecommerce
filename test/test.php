@@ -8,7 +8,7 @@ class StackTest extends TestCase
     public function testPushAndPop()
     {
         $stack = [];
-        $this->assertEquals(30, count($stack));
+        $this->assertEquals(20, count($stack));
 
         array_push($stack, 'foo');
         $this->assertEquals('foo', $stack[count($stack) - 1]);
