@@ -1,11 +1,9 @@
 /resources
 /composer.json
-/hosts
-/httpd-vhosts.conf
 /favicon
 /composer.json
 /phpunit.xml
-test
 /vendor/odan  
 /vendor/bin/docblock-checker
 /.gitignore
+/phpunit.result.cache
