@@ -11,6 +11,8 @@ class Page
     private $tpl;
     private $options = [];
     private $defaults = [
+      'header' => true,
+      'footer' => true,
       'data' => [],
     ];
 
@@ -20,7 +22,7 @@ class Page
      * @param mixed $opts
      * @param mixed $tpl_dir
      */
-    public function __construct($opts, $tpl_dir = '/views/')
+    public function __construct($opts = [], $tpl_dir = '/views/')
     {
         $this->options = array_merge($this->defaults, $opts);
         // config
@@ -36,7 +38,9 @@ class Page
 
         $this->setData($this->options['data']);
 
-        $this->tpl->draw('header');
+        if (true === $this->options['header']) {
+            $this->tpl->draw('header');
+        }
     }
 
     /**
@@ -44,7 +48,9 @@ class Page
      */
     public function __destruct()
     {
-        $this->tpl->draw('footer');
+        if (true === $this->options['footer']) {
+            $this->tpl->draw('footer');
+        }
     }
 
     /**
