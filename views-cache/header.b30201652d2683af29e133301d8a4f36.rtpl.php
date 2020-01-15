@@ -162,5 +162,4 @@
       </div>
     </div>
     <!-- End mainmenu area -->
-  </body>
-</html>
+ 
