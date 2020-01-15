@@ -81,22 +81,28 @@ class User extends Model
     }
 
     // Criado procedure para evitar grande volume de requisições no banco
+    // Realiza insert no banco
     public function save()
     {
         $sql = new Sql();
-
         $results = $sql->select('CALL sp_users_save(:desperson, :deslogin, :despassword, :desemail, :nrphone, :inadmin)', [
-         ':desperson' => $this->getdesperson(),
-         ':deslogin' => $this->getdeslogin(),
-         ':despassword' => $this->getdespassword(),
-         ':desemail' => $this->getdesemail(),
-         ':nrphone' => $this->getnrphone(),
-         ':inadmin' => $this->getinadmin(),
+            ':desperson' => $this->getdesperson(),
+            ':deslogin' => $this->getdeslogin(),
+            ':despassword' => $this->getdespassword(),
+            ':desemail' => $this->getdesemail(),
+            ':nrphone' => $this->getnrphone(),
+            ':inadmin' => $this->getinadmin(),
         ]);
-
         $this->setData($results[0]);
     }
 
+    /**
+     * get.
+     *
+     * @param mixed $iduser
+     * @param int   $iduser carrega o id do usuário
+     */
+    // Carrega dados do usuário para edição
     public function get($iduser)
     {
         $sql = new Sql();
@@ -109,6 +115,10 @@ class User extends Model
     }
 
     // Criado procedure para evitar requisições no banco
+
+    /**
+     * update.
+     */
     public function update()
     {
         $sql = new Sql();

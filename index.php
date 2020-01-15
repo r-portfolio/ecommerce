@@ -5,6 +5,8 @@ declare(strict_types=1);
 session_start();
 
 require_once 'vendor/autoload.php';
+
+use Hcode\Model\Category;
 use Hcode\Model\User;
 use Hcode\Page;
 use Hcode\PageAdmin;
@@ -60,6 +62,7 @@ $app->get('/admin/users/create', function () {
     $page->setTpl('users-create');
 });
 
+// Deleta o usuário
 $app->get('/admin/users/:iduser/delete', function ($iduser) {
     User::verifyLogin();
     $user = new User();
@@ -69,6 +72,7 @@ $app->get('/admin/users/:iduser/delete', function ($iduser) {
     exit;
 });
 
+// Renderiza dados do usuário para edição
 $app->get('/admin/users/:iduser', function ($iduser) {
     User::verifyLogin();
     $user = new User();
@@ -79,6 +83,7 @@ $app->get('/admin/users/:iduser', function ($iduser) {
     ]);
 });
 
+// Cria conta de usuário
 $app->post('/admin/users/:create', function () {
     User::verifyLogin();
     $user = new User();
@@ -88,7 +93,7 @@ $app->post('/admin/users/:create', function () {
     header('Location: /admin/users');
     exit;
 });
-
+// Realiza o update do usuário
 $app->post('/admin/users/:iduser', function ($iduser) {
     User::verifyLogin();
     $user = new User();
@@ -96,7 +101,6 @@ $app->post('/admin/users/:iduser', function ($iduser) {
     $user->get((int) $iduser);
     $user->setData($_POST);
     $user->update();
-
     header('Location: /admin/users');
     exit;
 });
@@ -112,7 +116,6 @@ $app->get('/admin/forgot', function () {
 
 $app->post('/admin/forgot', function () {
     $user = User::getForgot($_POST['email']);
-    var_dump($user);
     header('Location: /admin/forgot/sent');
     exit;
 });
@@ -156,5 +159,30 @@ $app->post('/admin/forgot/reset', function () {
     $page->setTpl('forgot-reset-success');
 });
 // end Esqueçeu a senha
+
+// Todo - Retornar aula 107 após correção do undefined index : despassowrd
+// Categorias
+// $app->get('/admin/categories', function () {
+//     $categories = Category::listAll();
+//     $page = new PageAdmin();
+//     $page->setTpl('categories', [
+//         'categories' => $categories,
+//     ]);
+// });
+
+// $app->get('/admin/categories/create', function () {
+//     $page = new PageAdmin();
+//     $page->setTpl('categories-create');
+// });
+
+// $app->post('/admin/categories/create', function () {
+//     $category = new Category();
+//     $category->setData($_POST);
+//     $category->saveCategory();
+//     header('Location:/admin/categories');
+//     exit;
+// });
+
+// end Categorias
 
 $app->run();

@@ -6,6 +6,7 @@ namespace Hcode;
 
 class Model
 {
+    // Recebe os valores do objeto
     private $values = [];
 
     /**
@@ -22,6 +23,7 @@ class Model
         switch ($method) {
           case 'get':
                return $this->values[$fieldName];
+
               break;
 
               case 'set':
