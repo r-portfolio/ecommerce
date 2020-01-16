@@ -24,6 +24,7 @@
                 <label for="desperson">Nome</label>
                 <input type="text" class="form-control" id="desperson" name="desperson" placeholder="Digite o nome"
                   value="<?php echo htmlspecialchars( $user["desperson"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+                <!-- <?php echo htmlspecialchars( $user["desperson"], ENT_COMPAT, 'UTF-8', FALSE ); ?> retorna os valores da variavel $user para os campos renderizados -->
               </div>
               <div class="form-group">
                 <label for="deslogin">Login</label>
@@ -43,7 +44,7 @@
               <div class="checkbox">
                 <label>
                   <!-- Verifica se usuário é administrador - se for retorne pré marcado -->
-                  <input type="checkbox" name="inadmin" value="1" { if="$user.inadmin == 1" } checked {if }> Acesso de
+                  <input type="checkbox" name="inadmin" value="1" { if="$user.inadmin == 1" } checked {if}> Acesso de
                   Administrador </label> </div>
             </div> <!-- /.box-body -->
             <div class="box-footer">

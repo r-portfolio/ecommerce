@@ -6,37 +6,25 @@ namespace Hcode;
 
 class Model
 {
-    // Recebe os valores do objeto
     private $values = [];
 
-    /**
-     * __call.
-     *
-     * @param string $name recebe id do usuario
-     * @param string $args recebe id do perfil
-     */
     public function __call($name, $args)
     {
         $method = substr($name, 0, 3);
         $fieldName = substr($name, 3, \strlen($name));
 
         switch ($method) {
-          case 'get':
-               return $this->values[$fieldName];
+            case 'get':
+                return $this->values[$fieldName];
+            break;
 
-              break;
-
-              case 'set':
+            case 'set':
                 $this->values[$fieldName] = $args[0];
-              break;
-      }
+            break;
+        }
     }
 
-    /**
-     * setData.
-     *
-     * @param mixed $data
-     */
+    // Definir os valores do Banco de Dados no objeto
     public function setData($data = [])
     {
         foreach ($data as $key => $value) {
@@ -44,11 +32,6 @@ class Model
         }
     }
 
-    /**
-     * getValues.
-     *
-     * @return dados da sessão
-     */
     public function getValues()
     {
         return $this->values;

@@ -45,9 +45,9 @@
                   <td>
                     <a href="/admin/users/<?php echo htmlspecialchars( $value1["iduser"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" class="btn btn-primary btn-xs"><i
                         class="fa fa-edit"></i>Editar</a>
-                    <a href="#" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#confirm-delete"><i
+                    <a href="/admin/users/<?php echo htmlspecialchars( $value1["iduser"], ENT_COMPAT, 'UTF-8', FALSE ); ?>/delete" class="btn btn-danger btn-xs"><i
                         class="fa fa-trash"></i> Excluir</a>
-                    <div class="modal" id="confirm-delete" tabindex="-1" role="dialog"
+                    <!-- <div class="modal" id="confirm-delete" tabindex="-1" role="dialog"
                       aria-labelledby="mySmallModalLabel" aria-hidden="true">
                       <div class="modal-dialog">
                         <div class="modal-content">
@@ -68,7 +68,7 @@
                               class="btn btn-danger btn-ok">Excluir</a>
                           </div>
                         </div>
-                      </div>
+                      </div> -->
                   </td>
                 </tr>
                 <?php } ?>

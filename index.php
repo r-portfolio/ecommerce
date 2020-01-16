@@ -76,6 +76,7 @@ $app->get('/admin/users/:iduser/delete', function ($iduser) {
 $app->get('/admin/users/:iduser', function ($iduser) {
     User::verifyLogin();
     $user = new User();
+    //Coverte para numérico
     $user->get((int) $iduser);
     $page = new PageAdmin();
     $page->setTpl('users-update', [
@@ -84,7 +85,7 @@ $app->get('/admin/users/:iduser', function ($iduser) {
 });
 
 // Cria conta de usuário
-$app->post('/admin/users/:create', function () {
+$app->post('/admin/users/create', function () {
     User::verifyLogin();
     $user = new User();
     $_POST['inadmin'] = (isset($_POST['inadmin'])) ? 1 : 0;
@@ -93,6 +94,7 @@ $app->post('/admin/users/:create', function () {
     header('Location: /admin/users');
     exit;
 });
+
 // Realiza o update do usuário
 $app->post('/admin/users/:iduser', function ($iduser) {
     User::verifyLogin();
