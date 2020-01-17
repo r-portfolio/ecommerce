@@ -73,33 +73,4 @@ class Category extends Model
         file_put_contents($_SERVER['DOCUMENT_ROOT'].\DIRECTORY_SEPARATOR.'views'.\DIRECTORY_SEPARATOR.
         'categories-menu.html', implode('', $html));
     }
-
-    /**
-     * get.
-     *
-     * @param mixed $idcategory
-     * @param int   $idcategory recebe id da categoria
-     */
-    public function get($idcategory)
-    {
-        $sql = new Sql();
-
-        $results = $sql->select('SELECT * FROM tb_categories WHERE idcategory = :idcategory', [
-           ':idcategory' => $idcategory,
-         ]);
-        // setData coloco os dados no objeto
-        $this->setData($results[0]);
-    }
-
-    /**
-     * delete.
-     */
-    // Delete categoria
-    public function delete()
-    {
-        $sql = new Sql();
-        $sql->query('DELETE  FROM tb_categories WHERE idcategory = :idcategory', [
-          'idcategory' => $this->getidcategory(),
-        ]);
-    }
 }
