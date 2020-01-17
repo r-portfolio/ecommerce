@@ -15,7 +15,7 @@ class Model
 
         switch ($method) {
             case 'get':
-                return $this->values[$fieldName];
+                return (isset($this->values[$fieldName])) ? $this->values[$fieldName] : null;
             break;
 
             case 'set':
@@ -32,6 +32,7 @@ class Model
         }
     }
 
+    // Busca valores no array de objetos
     public function getValues()
     {
         return $this->values;

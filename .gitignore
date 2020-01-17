@@ -7,3 +7,5 @@
 /vendor/bin/docblock-checker
 /.gitignore
 /phpunit.result.cache
+/vendor/hcodebr/php-classes/src/Mailer.php
+/vendor/hcodebr/php-classes/src/DB/Sql.php
