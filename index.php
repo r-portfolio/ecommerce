@@ -218,6 +218,7 @@ $app->post('/admin/categories/:idcategory', function ($idcategory) {
     header('location: /admin/categories');
     exit;
 });
+<<<<<<< HEAD
 
 $app->get('/categories/:idcategory', function ($idcategory) {
     $category = new Category();
@@ -228,6 +229,8 @@ $app->get('/categories/:idcategory', function ($idcategory) {
          'products' => [],
      ]);
 });
+=======
+>>>>>>> 0b5504547c2469e7273e7bcee01b108ba3e8eefb
 
 // end Categorias
 
