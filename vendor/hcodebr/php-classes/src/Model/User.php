@@ -17,7 +17,7 @@ class User extends Model
      * getFromSession.
      */
     // Verifica se a sessão existe
-    public static function getFromSessionUser()
+    public static function getFromSession()
     {
         $user = new self();
         if (isset($_SESSION[self::SESSION]) && (int) $_SESSION[self::SESSION]['iduser'] > 0) {
