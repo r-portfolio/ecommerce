@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Hcode\Model\Cart;
 use Hcode\Model\Category;
 use Hcode\Model\Product;
 use Hcode\Page;
@@ -44,4 +45,11 @@ $app->get('/products/:desurl', function ($desurl) {
     'product' => $product->getValues(),
     'categories' => $product->getCategories(),
   ]);
+});
+
+$app->get('/cart', function () {
+    $cart = Cart::getFromSessionCart();
+    var_dump($cart);
+    $page = new Page();
+    $page->setTpl('cart');
 });

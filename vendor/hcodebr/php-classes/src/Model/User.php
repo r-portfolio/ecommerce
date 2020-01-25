@@ -11,8 +11,42 @@ use Hcode\Model;
 class User extends Model
 {
     public const SESSION = 'User';
-    // Key base_64
-    public const SECRET = 'HcodePhp7_Secret';
+    public const SECRET = 'HcodePhp7_Secret';  // Key base_64
+
+    /**
+     * getFromSession.
+     */
+    // Verifica se a sessão existe
+    public static function getFromSessionUser()
+    {
+        $user = new self();
+        if (isset($_SESSION[self::SESSION]) && (int) $_SESSION[self::SESSION]['iduser'] > 0) {
+            $user->setData($_SESSION[self::SESSION]);
+        }
+
+        return $user;
+    }
+
+    public static function checkLogin($inadmin = true)
+    {
+        if (
+            !isset($_SESSION[self::SESSION])
+            ||
+            !$_SESSION[self::SESSION]
+            ||
+            !(int) $_SESSION[self::SESSION]['iduser'] > 0
+        ) {
+            //Não está logado
+            return false;
+        }
+        if (true === $inadmin && true === (bool) $_SESSION[self::SESSION]['inadmin']) {
+            return true;
+        } elseif (false === $inadmin) {
+            return true;
+        }
+
+        return false;
+    }
 
     /**
      * login.
@@ -52,17 +86,10 @@ class User extends Model
      *
      * @param mixed $inadmin
      */
-    // Verifica se o usuário logado tem perfil admin
+    // Verifica se o usuário está logado e se tem tem perfil admin
     public static function verifyLogin($inadmin = true)
     {
-        if (!isset($_SESSION[self::SESSION])
-            ||
-            !$_SESSION[self::SESSION]
-            ||
-            !(int) $_SESSION[self::SESSION]['iduser'] > 0
-            ||
-            (bool) $_SESSION[self::SESSION]['inadmin'] !== $inadmin
-            ) {
+        if (!self::checkLogin($inadmin)) {
             header('Location: /admin/login');
             exit;
         }

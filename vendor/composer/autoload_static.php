@@ -10,7 +10,12 @@ class ComposerStaticInit00a9db9d5bc75c4370fe8bdafceeb11d
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
+        'e8aa6e4b5a1db2f56ae794f1505391a8' => __DIR__ . '/..' . '/amphp/amp/lib/functions.php',
+        '76cd0796156622033397994f25b0d8fc' => __DIR__ . '/..' . '/amphp/amp/lib/Internal/functions.php',
+        '6cd5651c4fef5ed6b63e8d8b8ffbf3cc' => __DIR__ . '/..' . '/amphp/byte-stream/lib/functions.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        'dc51568953534d6c54b08731e61104e2' => __DIR__ . '/..' . '/vimeo/psalm/src/functions.php',
+        '8e4171839e12546525126d38dac3dafa' => __DIR__ . '/..' . '/vimeo/psalm/src/spl_object_id.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -20,6 +25,8 @@ class ComposerStaticInit00a9db9d5bc75c4370fe8bdafceeb11d
         ),
         'W' => 
         array (
+            'Webmozart\\PathUtil\\' => 19,
+            'Webmozart\\Glob\\' => 15,
             'Webmozart\\Assert\\' => 17,
         ),
         'S' => 
@@ -33,9 +40,13 @@ class ComposerStaticInit00a9db9d5bc75c4370fe8bdafceeb11d
         ),
         'P' => 
         array (
+            'Psr\\Log\\' => 8,
             'Psr\\Container\\' => 14,
+            'Psalm\\Plugin\\' => 13,
+            'Psalm\\' => 6,
             'Prophecy\\' => 9,
             'PhpParser\\' => 10,
+            'PackageVersions\\' => 16,
         ),
         'O' => 
         array (
@@ -44,6 +55,10 @@ class ComposerStaticInit00a9db9d5bc75c4370fe8bdafceeb11d
         'N' => 
         array (
             'Noodlehaus\\' => 11,
+        ),
+        'L' => 
+        array (
+            'LanguageServerProtocol\\' => 23,
         ),
         'H' => 
         array (
@@ -56,12 +71,19 @@ class ComposerStaticInit00a9db9d5bc75c4370fe8bdafceeb11d
         ),
         'C' => 
         array (
+            'Composer\\XdebugHandler\\' => 23,
             'Codedungeon\\PHPUnitPrettyResultPrinter\\' => 39,
             'Codedungeon\\PHPCliColors\\' => 25,
         ),
         'B' => 
         array (
             'Bakyt\\' => 6,
+        ),
+        'A' => 
+        array (
+            'Amp\\ByteStream\\' => 15,
+            'Amp\\' => 4,
+            'AdvancedJsonRpc\\' => 16,
         ),
     );
 
@@ -71,6 +93,14 @@ class ComposerStaticInit00a9db9d5bc75c4370fe8bdafceeb11d
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
             1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
             2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'Webmozart\\PathUtil\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webmozart/path-util/src',
+        ),
+        'Webmozart\\Glob\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webmozart/glob/src',
         ),
         'Webmozart\\Assert\\' => 
         array (
@@ -100,9 +130,21 @@ class ComposerStaticInit00a9db9d5bc75c4370fe8bdafceeb11d
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'Psalm\\Plugin\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/vimeo/psalm/src/Psalm/Plugin',
+        ),
+        'Psalm\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/vimeo/psalm/src/Psalm',
         ),
         'Prophecy\\' => 
         array (
@@ -112,6 +154,10 @@ class ComposerStaticInit00a9db9d5bc75c4370fe8bdafceeb11d
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
+        'PackageVersions\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ocramius/package-versions/src/PackageVersions',
+        ),
         'Odan\\DocBlockChecker\\' => 
         array (
             0 => __DIR__ . '/..' . '/odan/docblock-checker/src/DocBlockChecker',
@@ -119,6 +165,10 @@ class ComposerStaticInit00a9db9d5bc75c4370fe8bdafceeb11d
         'Noodlehaus\\' => 
         array (
             0 => __DIR__ . '/..' . '/hassankhan/config/src',
+        ),
+        'LanguageServerProtocol\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/felixfbecker/language-server-protocol/src',
         ),
         'Hcode\\' => 
         array (
@@ -132,6 +182,10 @@ class ComposerStaticInit00a9db9d5bc75c4370fe8bdafceeb11d
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
         ),
+        'Composer\\XdebugHandler\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/composer/xdebug-handler/src',
+        ),
         'Codedungeon\\PHPUnitPrettyResultPrinter\\' => 
         array (
             0 => __DIR__ . '/..' . '/codedungeon/phpunit-result-printer/src',
@@ -143,6 +197,18 @@ class ComposerStaticInit00a9db9d5bc75c4370fe8bdafceeb11d
         'Bakyt\\' => 
         array (
             0 => __DIR__ . '/..' . '/2bj/phanybar/src',
+        ),
+        'Amp\\ByteStream\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/amphp/byte-stream/lib',
+        ),
+        'Amp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/amphp/amp/lib',
+        ),
+        'AdvancedJsonRpc\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/felixfbecker/advanced-json-rpc/lib',
         ),
     );
 
@@ -159,6 +225,20 @@ class ComposerStaticInit00a9db9d5bc75c4370fe8bdafceeb11d
             'Rain' => 
             array (
                 0 => __DIR__ . '/..' . '/rain/raintpl/library',
+            ),
+        ),
+        'L' => 
+        array (
+            'LSS' => 
+            array (
+                0 => __DIR__ . '/..' . '/openlss/lib-array2xml',
+            ),
+        ),
+        'J' => 
+        array (
+            'JsonMapper' => 
+            array (
+                0 => __DIR__ . '/..' . '/netresearch/jsonmapper/src',
             ),
         ),
     );

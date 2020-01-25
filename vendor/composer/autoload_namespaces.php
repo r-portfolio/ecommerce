@@ -8,4 +8,6 @@ $baseDir = dirname($vendorDir);
 return array(
     'Slim' => array($vendorDir . '/slim/slim'),
     'Rain' => array($vendorDir . '/rain/raintpl/library'),
+    'LSS' => array($vendorDir . '/openlss/lib-array2xml'),
+    'JsonMapper' => array($vendorDir . '/netresearch/jsonmapper/src'),
 );
