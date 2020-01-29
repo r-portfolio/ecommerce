@@ -32,6 +32,7 @@ return array(
     'Composer\\XdebugHandler\\' => array($vendorDir . '/composer/xdebug-handler/src'),
     'Codedungeon\\PHPUnitPrettyResultPrinter\\' => array($vendorDir . '/codedungeon/phpunit-result-printer/src'),
     'Codedungeon\\PHPCliColors\\' => array($vendorDir . '/codedungeon/php-cli-colors/src'),
+    'Bartlett\\' => array($vendorDir . '/bartlett/umlwriter/src/Bartlett'),
     'Bakyt\\' => array($vendorDir . '/2bj/phanybar/src'),
     'Amp\\ByteStream\\' => array($vendorDir . '/amphp/byte-stream/lib'),
     'Amp\\' => array($vendorDir . '/amphp/amp/lib'),

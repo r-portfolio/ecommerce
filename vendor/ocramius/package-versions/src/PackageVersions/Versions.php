@@ -14,6 +14,7 @@ final class Versions
 {
     public const ROOT_PACKAGE_NAME = 'r-portfolio/ecommerce';
     public const VERSIONS          = array (
+  'bartlett/umlwriter' => '1.3.1@9f2b0800a4f541ad74e723e1f2f134dcddb8ddf5',
   'doctrine/instantiator' => '1.3.0@ae466f726242e637cebdd526a7d991b9433bacf1',
   'myclabs/deep-copy' => '1.9.4@579bb7356d91f9456ccd505f24ca8b667966a0a7',
   'phar-io/manifest' => '1.0.3@7761fcacf03b4d4f16e7ccb606d4879ca431fcf4',
@@ -29,6 +30,7 @@ final class Versions
   'phpunit/php-timer' => '2.1.2@1038454804406b0b5f5f520358e78c1c2f71501e',
   'phpunit/php-token-stream' => '3.1.1@995192df77f63a59e47f025390d2d1fdf8f425ff',
   'phpunit/phpunit' => '8.5.1@7870c78da3c5e4883eaef36ae47853ebb3cb86f2',
+  'psr/container' => '1.0.0@b7ce3b176482dbbc1245ebf52b181af44c2cf55f',
   'rain/raintpl' => '3.0.0@5bfdf4602b8adb0e80b222fa29ac559aa9c06abf',
   'sebastian/code-unit-reverse-lookup' => '1.0.1@4419fcdb5eabb9caa61a27c7a1db532a6b55dd18',
   'sebastian/comparator' => '3.0.2@5de4fc177adf9bce8df98d8d141a7559d7ccf6da',
@@ -43,7 +45,11 @@ final class Versions
   'sebastian/type' => '1.1.3@3aaaa15fa71d27650d62a948be022fe3b48541a3',
   'sebastian/version' => '2.0.1@99732be0ddb3361e16ad77b68ba41efc8e979019',
   'slim/slim' => '2.0.0@3e95c9abbc57a8f023ab4dacebcab9dae4d9f1f0',
+  'symfony/console' => 'v4.4.2@82437719dab1e6bdd28726af14cb345c2ec816d0',
   'symfony/polyfill-ctype' => 'v1.13.1@f8f0b461be3385e56d6de3dbb5a0df24c0c275e3',
+  'symfony/polyfill-mbstring' => 'v1.13.1@7b4aab9743c30be783b73de055d24a39cf4b954f',
+  'symfony/polyfill-php73' => 'v1.13.1@4b0e2222c55a25b4541305a053013d5647d3a25f',
+  'symfony/service-contracts' => 'v2.0.1@144c5e51266b281231e947b51223ba14acf1a749',
   'theseer/tokenizer' => '1.1.3@11336f6f84e16a720dae9d8e6ed5019efa85a0f9',
   'webmozart/assert' => '1.6.0@573381c0a64f155a0d9a23f4b0c797194805b925',
   '2bj/phanybar' => 'v1.0.0@88ff671e18f30c2047a34f8cf2465a7ff93c819b',
@@ -60,17 +66,12 @@ final class Versions
   'ocramius/package-versions' => '1.4.2@44af6f3a2e2e04f2af46bcb302ad9600cba41c7d',
   'odan/docblock-checker' => '1.3.0@9180fb519c12d3cff394325aab999d40c260c084',
   'openlss/lib-array2xml' => '1.0.0@a91f18a8dfc69ffabe5f9b068bc39bb202c81d90',
-  'psr/container' => '1.0.0@b7ce3b176482dbbc1245ebf52b181af44c2cf55f',
   'psr/log' => '1.1.2@446d54b4cb6bf489fc9d75f55843658e6f25d801',
-  'symfony/console' => 'v4.4.2@82437719dab1e6bdd28726af14cb345c2ec816d0',
-  'symfony/polyfill-mbstring' => 'v1.13.1@7b4aab9743c30be783b73de055d24a39cf4b954f',
-  'symfony/polyfill-php73' => 'v1.13.1@4b0e2222c55a25b4541305a053013d5647d3a25f',
-  'symfony/service-contracts' => 'v2.0.1@144c5e51266b281231e947b51223ba14acf1a749',
   'symfony/yaml' => 'v4.4.2@a08832b974dd5fafe3085a66d41fe4c84bb2628c',
   'vimeo/psalm' => '3.8.3@389af1bfc739bfdff3f9e3dc7bd6499aee51a831',
   'webmozart/glob' => '4.1.0@3cbf63d4973cf9d780b93d2da8eec7e4a9e63bbe',
   'webmozart/path-util' => '2.3.0@d939f7edc24c9a1bb9c0dee5cb05d8e859490725',
-  'r-portfolio/ecommerce' => 'dev-development@0b1e1f76fc48d679f201c52c8466e77dec84be28',
+  'r-portfolio/ecommerce' => 'dev-development@9f437b28bac34fdadd50d90bcdfe9c81cbce306d',
 );
 
     private function __construct()

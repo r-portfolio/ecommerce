@@ -77,6 +77,7 @@ class ComposerStaticInit00a9db9d5bc75c4370fe8bdafceeb11d
         ),
         'B' => 
         array (
+            'Bartlett\\' => 9,
             'Bakyt\\' => 6,
         ),
         'A' => 
@@ -193,6 +194,10 @@ class ComposerStaticInit00a9db9d5bc75c4370fe8bdafceeb11d
         'Codedungeon\\PHPCliColors\\' => 
         array (
             0 => __DIR__ . '/..' . '/codedungeon/php-cli-colors/src',
+        ),
+        'Bartlett\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/bartlett/umlwriter/src/Bartlett',
         ),
         'Bakyt\\' => 
         array (
