@@ -7,7 +7,7 @@ namespace Hcode\Model;
 use Hcode\DB\Sql;
 use Hcode\Model;
 
-class Cart extends Model
+class Address extends Model
 {
     public const SESSION = 'Cart';
     public const SESSION_ERROR = 'CartError';
@@ -277,7 +277,6 @@ class Cart extends Model
         $totals = $this->getProductsTotals();
 
         $this->setvlsubtotal($totals['vlprice']);
-
         $this->setvltotal($totals['vlprice'] + (float) $this->getvlfreight());
     }
 }

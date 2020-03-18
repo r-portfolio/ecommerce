@@ -12,6 +12,8 @@ class User extends Model
 {
     public const SESSION = 'User';
     public const SECRET = 'HcodePhp7_Secret';  // Key base_64
+    public const ERROR = 'UserError';
+    public const ERROR_REGISTER = 'UserErrorRegister';
 
     /**
      * getFromSession.
@@ -90,7 +92,11 @@ class User extends Model
     public static function verifyLogin($inadmin = true)
     {
         if (!self::checkLogin($inadmin)) {
-            header('Location: /admin/login');
+            if ($inadmin) {
+                header('Location: /admin/login');
+            } else {
+                header('Location: /login');
+            }
             exit;
         }
     }
@@ -275,7 +281,82 @@ class User extends Model
 
         $sql->query('UPDATE tb_users SET despassword = :password WHERE iduser = :iduser', [
            ':password' => $password,
-           ':iduser' => $this->getiduser(),
+           ':iduser' => $this->getiduser(), // acessando um método
+        ]);
+    }
+
+    public static function setError($msg)
+    {
+        $_SESSION[self::ERROR] = $msg;
+    }
+
+    public static function getError()
+    {
+        $msg = (isset($_SESSION[self::ERROR]) && $_SESSION[self::ERROR]) ? $_SESSION[self::ERROR] : '';
+
+        self::clearError();
+
+        return $msg;
+    }
+
+    public static function clearError()
+    {
+        $_SESSION[self::ERROR] = null;
+    }
+
+    public static function setSuccess($msg)
+    {
+        $_SESSION[self::SUCCESS] = $msg;
+    }
+
+    public static function getSuccess()
+    {
+        $msg = (isset($_SESSION[self::SUCCESS]) && $_SESSION[self::SUCCESS]) ? $_SESSION[self::SUCCESS] : '';
+
+        self::clearSuccess();
+
+        return $msg;
+    }
+
+    public static function clearSuccess()
+    {
+        $_SESSION[self::SUCCESS] = null;
+    }
+
+    public static function setErrorRegister($msg)
+    {
+        $_SESSION[self::ERROR_REGISTER] = $msg;
+    }
+
+    public static function getErrorRegister()
+    {
+        $msg = (isset($_SESSION[self::ERROR_REGISTER]) && $_SESSION[self::ERROR_REGISTER]) ? $_SESSION[self::ERROR_REGISTER] : '';
+
+        self::clearErrorRegister();
+
+        return $msg;
+    }
+
+    public static function clearErrorRegister()
+    {
+        $_SESSION[self::ERROR_REGISTER] = null;
+    }
+
+    public static function checkLoginExist($login)
+    {
+        $sql = new Sql();
+
+        $results = $sql->select('SELECT * FROM tb_users WHERE deslogin = :deslogin', [
+            ':deslogin' => $login,
+        ]);
+
+        return \count($results) > 0;
+    }
+
+    public static function getPasswordHash($password)
+    {
+        return password_hash($password, PASSWORD_DEFAULT, [
+            'cost' => 12,
         ]);
     }
 }
