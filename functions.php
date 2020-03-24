@@ -9,7 +9,7 @@ use Hcode\Model\User;
  *
  * @param mixed $vlprice
  */
-function formatPrice($vlprice)
+function formatPrice(float $vlprice)
 {
     return number_format($vlprice, 2, ',', '.');
 }
