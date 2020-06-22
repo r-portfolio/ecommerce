@@ -63,7 +63,8 @@ class User extends Model
     {
         $sql = new Sql();
 
-        $results = $sql->select('SELECT * FROM tb_users WHERE deslogin = :LOGIN', [
+        $results = $sql->select('SELECT * FROM tb_users a INNER JOIN tb_persons b ON a.idperson  = b.idperson WHERE a.deslogin =
+           :LOGIN', [
           ':LOGIN' => $login,
         ]);
 
@@ -75,6 +76,7 @@ class User extends Model
 
         if (true == password_verify($password, $data['despassword'])) {
             $user = new self();
+            $data['desperson'] = utf8_encode($data['desperson']);
             $user->setData($data);
             $_SESSION[self::SESSION] = $user->getValues();
 
@@ -119,13 +121,15 @@ class User extends Model
     {
         $sql = new Sql();
         $results = $sql->select('CALL sp_users_save(:desperson, :deslogin, :despassword, :desemail, :nrphone, :inadmin)', [
-            ':desperson' => $this->getdesperson(),
+            ':desperson' => utf8_decode($this->getdesperson()),
             ':deslogin' => $this->getdeslogin(),
-            ':despassword' => $this->getdespassword(),
+            ':despassword' => self::getPasswordHash($this->getdespassword()),
             ':desemail' => $this->getdesemail(),
             ':nrphone' => $this->getnrphone(),
             ':inadmin' => $this->getinadmin(),
         ]);
+        // var_dump($this->getinadmin());
+        // exit;
         $this->setData($results[0]);
     }
 
@@ -144,7 +148,9 @@ class User extends Model
             ':iduser' => $iduser,
         ]);
 
-        $this->setData($results[0]);
+        $data = ($results[0]);
+        $data['desperson'] = utf8_encode($data['desperson']);
+        $this->setData($data);
     }
 
     // Criado procedure para evitar requisições no banco
@@ -158,9 +164,9 @@ class User extends Model
 
         $results = $sql->select('CALL sp_usersupdate_save(:iduser, :desperson, :deslogin, :despassword, :desemail, :nrphone, :inadmin)', [
             ':iduser' => $this->getiduser(),
-            ':desperson' => $this->getdesperson(),
+            ':desperson' => utf8_decode($this->getdesperson()),
             ':deslogin' => $this->getdeslogin(),
-            ':despassword' => $this->getdespassword(),
+            ':despassword' => self::getPasswordHash($this->getdespassword()),
             ':desemail' => $this->getdesemail(),
             ':nrphone' => $this->getnrphone(),
             ':inadmin' => $this->getinadmin(),
@@ -353,6 +359,7 @@ class User extends Model
         return \count($results) > 0;
     }
 
+    // Criptofra password
     public static function getPasswordHash($password)
     {
         return password_hash($password, PASSWORD_DEFAULT, [
