@@ -4,12 +4,7 @@ declare(strict_types=1);
 
 use Hcode\Model\User;
 
-/**
- * formatPrice.
- *
- * @param mixed $vlprice
- */
-function formatPrice(float $vlprice)
+function formatPrice($vlprice)
 {
     if (!$vlprice > 0) {
         $vlprice = 0;
