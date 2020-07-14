@@ -23,6 +23,8 @@ $app->post('/admin/login', function () {
     User::login($_POST['login'], $_POST['password']);
     header('Location: /admin');
     exit;
+
+    var_dump($_POST);
 });
 
 $app->get('/admin/logout', function () {

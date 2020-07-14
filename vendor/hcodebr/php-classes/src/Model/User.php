@@ -216,6 +216,8 @@ class User extends Model
             throw new \Exception('Não foi possível recuperar a senha.');
         }
 
+        var_dump($resultsRecovery);
+
         $dataRecovery = $resultsRecovery[0];
         $iv = random_bytes(openssl_cipher_iv_length('aes-256-cbc'));
         $code = openssl_encrypt($dataRecovery['idrecovery'], 'aes-256-cbc', self::SECRET, 0, $iv);

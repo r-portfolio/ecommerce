@@ -7,19 +7,13 @@
     "require": {
         "phpmailer/phpmailer": "5.2.22",
         "slim/slim": "2.0",
-        "rain/raintpl": "3.0.0",
-        "phpunit/phpunit": "^8.5",
-        "bartlett/umlwriter": "^1.2"
+        "rain/raintpl": "3.0.0"
 
     },
     "autoload": {
         "psr-4": {
             "Hcode\\": "vendor\\hcodebr\\php-classes\\src"
         }
-    },
-    "require-dev": {
-        "odan/docblock-checker": "^1.3",
-        "codedungeon/phpunit-result-printer": "^0.26.2",
-        "vimeo/psalm": "^3.8"
     }
+
 }
