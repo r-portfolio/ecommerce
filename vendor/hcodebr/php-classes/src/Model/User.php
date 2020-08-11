@@ -14,6 +14,7 @@ class User extends Model
     public const SECRET = 'HcodePhp7_Secret';  // Key base_64
     public const ERROR = 'UserError';
     public const ERROR_REGISTER = 'UserErrorRegister';
+    public const SUCCESS = 'UserSuccess';
 
     /**
      * getFromSession.
@@ -359,6 +360,7 @@ class User extends Model
         ]);
 
         return \count($results) > 0;
+        var_dump($results);
     }
 
     // Criptofra password
