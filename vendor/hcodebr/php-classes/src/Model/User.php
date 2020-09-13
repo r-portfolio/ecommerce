@@ -360,7 +360,6 @@ class User extends Model
         ]);
 
         return \count($results) > 0;
-        var_dump($results);
     }
 
     // Criptofra password
