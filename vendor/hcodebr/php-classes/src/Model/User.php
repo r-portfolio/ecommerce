@@ -54,9 +54,8 @@ class User extends Model
     /**
      * login.
      *
-     * @param string $name
-     * @param mixed  $login
-     * @param mixed  $password
+     * @param mixed $login
+     * @param mixed $password
      *
      * @return array $user com valores do usuario
      */
