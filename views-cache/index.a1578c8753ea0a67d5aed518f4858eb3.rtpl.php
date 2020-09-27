@@ -9,7 +9,7 @@
           <div class="inner">
             <h3>
               <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">15</font>
+                <font style="vertical-align: inherit;">R$<?php echo getCartVlSubTotal(); ?></font>
               </font>
             </h3>
 

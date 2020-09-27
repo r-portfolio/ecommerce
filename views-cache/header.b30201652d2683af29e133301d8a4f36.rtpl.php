@@ -101,9 +101,9 @@
 
         <div class="col-sm-6">
           <div class="shopping-item">
-            <a href="/cart">Carrinho - <span class="cart-amunt">R$100</span>
+            <a href="/cart">Carrinho - <span class="cart-amunt">R$<?php echo getCartVlSubTotal(); ?></span>
               <i class="fa fa-shopping-cart"></i>
-              <span class="product-count">5</span></a>
+              <span class="product-count"><?php echo getCartNrQtd(); ?></span></a>
           </div>
         </div>
       </div>
