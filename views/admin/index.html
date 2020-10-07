@@ -103,7 +103,7 @@
 
             <p>
               <font style="vertical-align: inherit;">
-                <font style="vertical-align: inherit;">visitantes únicos</font>
+                <font style="vertical-align: inherit;">Total de Clientes</font>
               </font>
             </p>
           </div>
@@ -125,6 +125,18 @@
 
   <!-- Main content -->
   <section class="content">
+
+    <div id="piechart" style="width: 780px; height: 500px;"></div>
+
+
+    <!-- Your Page Content Here -->
+
+  </section>
+
+  <section class="content">
+
+
+    <div id="columnchart_material" style="width: 780px; height: 500px;"></div>
 
     <!-- Your Page Content Here -->
 

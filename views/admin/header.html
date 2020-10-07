@@ -267,6 +267,9 @@ desired effect
           <li><a href="/admin/products"><i class="fa fa-link"></i> <span>Produtos</span></a></li>
           <li><a href="/admin/orders"><i class="fa fa-shopping-cart"></i> <span>Pedidos</span></a></li>
 
+          <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
 
         </ul>
         <!-- /.sidebar-menu -->

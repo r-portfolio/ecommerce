@@ -389,13 +389,24 @@ class User extends Model
         return $results;
     }
 
-    // Método para widgets
+    // Todo - Refatora consulta
+    // Realiza a contagem de usuários - Método para widgets
     public static function getTotalUsers()
     {
         $sql = new Sql();
 
-        $results = $sql->query('SELECT * FROM tb_users');
+        $results = $sql->select('
+         SELECT 
+         COUNT(*)  
+         FROM tb_users
+           ', [
+               ':iduser' => $this->getiduser(),
+           ]);
 
-        return $results;
+        if (\count($results) > 0) {
+            return $results[0];
+        }
+
+        return [];
     }
 }
