@@ -9,6 +9,9 @@ use Hcode\Model;
 
 class Order extends Model
 {
+    public const SUCCESS = 'Order-Success';
+    public const ERROR = 'Order-Error';
+
     public function save()
     {
         $sql = new Sql();
@@ -81,5 +84,57 @@ class Order extends Model
         $cart->get((int) $this->getidcart());
 
         return $cart;
+    }
+
+    public static function setError($msg)
+    {
+        $_SESSION[self::ERROR] = $msg;
+    }
+
+    public static function getError()
+    {
+        $msg = (isset($_SESSION[self::ERROR]) && $_SESSION[self::ERROR]) ? $_SESSION[self::ERROR] : '';
+
+        self::clearError();
+
+        return $msg;
+    }
+
+    public static function clearError()
+    {
+        $_SESSION[self::ERROR] = null;
+    }
+
+    public static function setSuccess($msg)
+    {
+        $_SESSION[self::SUCCESS] = $msg;
+    }
+
+    public static function getSuccess()
+    {
+        $msg = (isset($_SESSION[self::SUCCESS]) && $_SESSION[self::SUCCESS]) ? $_SESSION[self::SUCCESS] : '';
+
+        self::clearSuccess();
+
+        return $msg;
+    }
+
+    public static function clearSuccess()
+    {
+        $_SESSION[self::SUCCESS] = null;
+    }
+
+    public static function setErrorRegister($msg)
+    {
+        $_SESSION[self::ERROR_REGISTER] = $msg;
+    }
+
+    public static function getErrorRegister()
+    {
+        $msg = (isset($_SESSION[self::ERROR_REGISTER]) && $_SESSION[self::ERROR_REGISTER]) ? $_SESSION[self::ERROR_REGISTER] : '';
+
+        self::clearErrorRegister();
+
+        return $msg;
     }
 }
