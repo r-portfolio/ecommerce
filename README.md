@@ -13,5 +13,6 @@ Projeto desenvolvido do zero no Curso de PHP 7 disponível na plataforma da Udem
 <p>Banco de dado Mysqli</p>
 <p>Composer para trabalhar com dependências</p>
 <p>ViaCep para consultar Códigos de Endereçamento Postal (CEP)</p>
+<p>Estrutura MVC</p>
 
 
