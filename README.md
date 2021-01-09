@@ -4,7 +4,7 @@
 Projeto desenvolvido do zero no Curso de PHP 7 disponível na plataforma da Udemy.
 
 
-Ferramentas utilizadas no projeto
+# Ferramentas utilizadas no projeto
 
 <p>Slim Framework para criar rotas</p>
 <p>RainTpl para criação de templates</p>
